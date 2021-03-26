@@ -1,0 +1,34 @@
+.navbar {
+  img {
+    width: 16rem;
+  }
+  &__item {
+    @apply text-24;
+    @apply text-white;
+    @apply ml-20;
+    @apply relative;
+    @apply z-10;
+    &::after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10%;
+      top: 70%;
+      background-color: #f37323;
+      z-index: -1;
+      transition: 0.1s all linear;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &.showUnderline {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.counter {
+  background-color: rgba(#140039, 0.1);
+  &__btn {
+    button {
+      @apply text-8xl;
+      @apply m-10;
+      @apply bg-gray-400;
+      @apply w-56;
+      @apply h-32;
+      @apply flex;
+      @apply justify-center;
+      @apply items-center;
+      @apply rounded-lg;
+      @apply outline-none;
+      color: #140039;
+      &:focus {
+        @apply outline-none;
+      }
+      &:disabled {
+        @apply bg-gray-300;
+        color: rgba(#140039, 0.4);
+      }
+    }
+  }
+  &__redo {
+    width: 3rem !important;
+    height: 3rem;
+    color: #140039;
+    &:hover {
+      animation-name: rotate;
+      animation-duration: 1s;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,33 @@
+.wrapTodos {
+  .todos {
+    &__item {
+      svg {
+        width: 3rem !important;
+        height: 3rem;
+      }
+    }
+    &__checkAll {
+      width: 2.4rem !important;
+      height: 2.4rem;
+    }
+    .todos__inputHeader::placeholder {
+        font-style: italic;
+    }
+    .todos__filter-btn {
+      @apply inline-block;
+      @apply mx-2;
+      @apply px-2;
+      @apply py-0.5;
+      @apply rounded-lg;
+      @apply cursor-pointer;
+      &.active {
+        @apply border;
+        @apply  border-solid;
+        border-color: #140039;
+      }
+    }
+    .todos__total {
+      transform: translateY(-50%);
+    }
+  }
+}

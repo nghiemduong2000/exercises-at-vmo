@@ -1,0 +1,10 @@
+.text-editor {
+  .quill {
+    .ql-container {
+      .ql-editor {
+        @apply max-h-35;
+        @apply text-16;
+      }
+    }
+  }
+}

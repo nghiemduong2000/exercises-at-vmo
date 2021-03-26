@@ -1,0 +1,12 @@
+.blogs {
+  &__btnAdd {
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    &-icon {
+      width: 4rem !important;
+      height: 4rem;
+      @apply text-yellow-100;
+    }
+  }
+}

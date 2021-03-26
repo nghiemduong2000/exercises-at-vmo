@@ -1,0 +1,14 @@
+.blogAddEdit {
+  &__title {
+  }
+  &__form {
+    .blogAddEdit__input {
+      @apply border;
+      @apply border-gray-300;
+      @apply text-18;
+      @apply py-4;
+      @apply px-6;
+      @apply mb-8;
+    }
+  }
+}
