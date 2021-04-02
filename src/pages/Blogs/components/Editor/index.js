@@ -22,20 +22,35 @@ function imageHandler() {
  */
 const CustomToolbar = () => (
   <div id='toolbar'>
-    <select className='ql-header' value=''>
-      <option value=''>Normal</option>
-      <option value='1'>Heading 1</option>
-      <option value='2'>Heading 2</option>
-      <option value='3'>Heading 3</option>
-    </select>
-    <button className='ql-bold' />
-    <button className='ql-italic' />
-    <button className='ql-underline' />
-    <button className='ql-link' />
-    <select className='ql-align' />
-    <select className='ql-color' />
-    <button className='ql-code-block' />
-    <button className='ql-image' />
+    <span className='ql-formats'>
+      <select className='ql-header text-left' defaultValue=''>
+        <option value=''>Normal</option>
+        <option value='1'>Heading 1</option>
+        <option value='2'>Heading 2</option>
+        <option value='3'>Heading 3</option>
+      </select>
+    </span>
+    <span className='ql-formats'>
+      <button className='ql-list' value='bullet' />
+      <button className='ql-list' value='ordered' />
+    </span>
+    <span className='ql-formats'>
+      <button className='ql-bold' />
+      <button className='ql-italic' />
+      <button className='ql-underline' />
+    </span>
+    <span className='ql-formats'>
+      <select className='ql-align' />
+      <select className='ql-color' />
+    </span>
+    <span className='ql-formats'>
+      <button className='ql-blockquote' />
+      <button className='ql-code-block' />
+    </span>
+    <span className='ql-formats'>
+      <button className='ql-link' />
+      <button className='ql-image' />
+    </span>
   </div>
 );
 
@@ -75,7 +90,7 @@ export default class Editor extends React.Component {
 
   render() {
     return (
-      <div className='text-editor'>
+      <div className='text-editor text-left'>
         <CustomToolbar />
         <ReactQuill
           value={this.props.editorHtml}

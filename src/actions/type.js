@@ -1,9 +1,23 @@
+//TODOS
 export const GET_TODOS = 'GET_TODOS';
+export const GET_TODOS_SUCCESS = 'GET_TODOS_SUCCESS';
+
 export const UPDATE_TODOS = 'UPDATE_TODOS';
+export const UPDATE_TODOS_SUCCESS = 'UPDATE_TODOS_SUCCESS';
 
+// QUOTES
 export const GET_QUOTES = 'GET_QUOTES';
+export const GET_QUOTES_SUCCESS = 'GET_QUOTES_SUCCESS';
 
+// POSTS
 export const GET_POSTS = 'GET_POSTS';
+export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
+
 export const ADD_POST = 'ADD_POST';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+
 export const UPDATE_POST = 'UPDATE_POST';
+export const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS';
+
 export const DELETE_POST = 'DELETE_POST';
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS';

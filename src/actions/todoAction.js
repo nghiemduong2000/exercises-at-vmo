@@ -8,9 +8,8 @@ export const getTodos = () => {
 };
 
 export const updateTodos = (data) => {
-  localStorage.setItem('dataTodos', JSON.stringify(data));
   return {
     type: UPDATE_TODOS,
-    payload: data,
+    data,
   };
 };

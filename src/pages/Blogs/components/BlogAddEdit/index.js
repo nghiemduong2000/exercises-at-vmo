@@ -1,16 +1,20 @@
 import { addPost } from 'actions/postAction';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+import validation from 'utils/validation';
 import Editor from '../Editor';
 import './style.scss';
 
 const BlogAddEdit = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [state, setState] = useState({
     body: '',
     name: '',
     description: '',
     author: '',
+    error: '',
   });
 
   const handleOnChange = (html) => {
@@ -22,16 +26,26 @@ const BlogAddEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const { name, description, author, body } = state;
-    const newPost = {
-      name,
-      author,
-      body: body,
-      description,
-    };
-
-    dispatch(addPost(newPost));
+    if (validation(name, description, author, body)) {
+      const newPost = {
+        name,
+        author,
+        body: body,
+        description,
+      };
+      setState((newState) => ({
+        ...newState,
+        error: '',
+      }));
+      dispatch(addPost(newPost));
+      history.push('/Blogs');
+    } else {
+      setState((newState) => ({
+        ...newState,
+        error: 'Vui lòng điền tất cả ô trống',
+      }));
+    }
   };
 
   return (
@@ -43,6 +57,11 @@ const BlogAddEdit = () => {
         onSubmit={handleSubmit}
         className='blogAddEdit__form flex flex-col w-1/2 m-auto'
       >
+        {state.error ? (
+          <div className='BlogAddEdit__error bg-red-100 mb-8 border border-red-500 text-18 py-4 px-6 text-red-500'>
+            {state.error}
+          </div>
+        ) : null}
         <input
           placeholder='Điền tiêu đề'
           onChange={(e) => setState({ ...state, name: e.target.value })}

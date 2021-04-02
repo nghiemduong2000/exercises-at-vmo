@@ -3,27 +3,38 @@
     p {
       @apply text-18;
     }
-    ul {
+    ul,
+    ol {
       @apply pl-16;
       @apply text-18;
+    }
+    ul {
       li {
         @apply list-disc;
+      }
+    }
+    ol {
+      li {
+        @apply list-decimal;
       }
     }
     h1 {
       @apply text-30;
       @apply my-6;
       @apply text-purple;
+      @apply font-bold;
     }
     h2 {
       @apply text-24;
       @apply my-4;
       @apply text-purple;
+      @apply font-bold;
     }
     h3 {
       @apply text-22;
       @apply my-2;
       @apply text-purple;
+      @apply font-bold;
     }
     pre {
       @apply py-6;
@@ -32,6 +43,7 @@
       @apply text-white;
       @apply text-16;
       @apply my-6;
+      @apply overflow-auto;
     }
     img {
       @apply w-full;

@@ -1,4 +1,4 @@
-import { GET_QUOTES } from '../actions/type';
+import { GET_QUOTES_SUCCESS } from '../actions/type';
 
 const initialState = {
   quotes: [],
@@ -7,7 +7,7 @@ const initialState = {
 
 const quoteReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_QUOTES:
+    case GET_QUOTES_SUCCESS:
       return {
         ...state,
         quotes: action.payload,

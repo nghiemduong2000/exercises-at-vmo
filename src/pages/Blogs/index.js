@@ -15,7 +15,8 @@ const Blogs = (props) => {
   useEffect(() => {
     setPosts(data);
     //eslint-disable-next-line
-  }, [loading]);
+  }, [data]);
+
   return (
     <div className='blogs mt-44'>
       <Link
@@ -29,9 +30,9 @@ const Blogs = (props) => {
       </h2>
       {!loading ? (
         <ul className='blogs__list w-1/2 m-auto'>
-          {posts.map((item) => (
-            <Blog posts={item} key={item._id} />
-          ))}
+          {posts.map((item) => {
+            return <Blog posts={item} key={item._id} />;
+          })}
         </ul>
       ) : (
         <Loading className='h-28 w-28' />

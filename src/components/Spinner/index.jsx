@@ -10,7 +10,7 @@ const Spinner = (props) => {
         cy='12'
         r='10'
         stroke='#F37224'
-        stroke-width='4'
+        strokeWidth='4'
         fill='transparent'
       />
       <path
